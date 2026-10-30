@@ -447,12 +447,9 @@ function renderComparison() {
     items.length + " of 4 products selected";
 
   if (items.length === 0) {
-
     document.getElementById("table").innerHTML =
       '<p class="empty">Add products above to compare them.</p>';
-
     return;
-
   }
 
   document.getElementById("table").innerHTML = `
@@ -469,9 +466,7 @@ function renderComparison() {
 
       <tr>
         <td>Price</td>
-        ${items.map(p =>
-          <td>₹${p.price.toLocaleString("en-IN")}</td>
-        ).join("")}
+        ${items.map(p => <td>₹${p.price.toLocaleString("en-IN")}</td>).join("")}
       </tr>
 
       <tr>
@@ -485,9 +480,7 @@ function renderComparison() {
       </tr>
     </table>
   `;
-
 }
-
 document.getElementById("search")
   .addEventListener("keydown", e => {
     if (e.key === "Enter") renderProducts();
