@@ -2,200 +2,501 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShopVellora | Product Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopVellora | Shop Smarter. Live Better.</title>
+
 <style>
 :root {
-  --navy:#142B5A;
-  --gold:#D6B878;
-  --cream:#F8F5EF;
+  --navy: #142B5A;
+  --gold: #D6B878;
+  --ivory: #F8F5EF;
+  --white: #FFFFFF;
+  --text: #202938;
 }
-* {box-sizing:border-box}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  color:#202b3c;
-  background:var(--cream);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--ivory);
+  color: var(--text);
 }
+
 header {
-  background:var(--navy);
-  color:white;
-  padding:28px 6%;
+  background: var(--navy);
+  color: white;
+  padding: 25px 7%;
+  border-bottom: 4px solid var(--gold);
 }
-.brand {font-size:29px;font-weight:bold;letter-spacing:1px}
-.brand span {color:var(--gold)}
-header p {margin:8px 0 0;color:#e6e9f0}
-main {max-width:1100px;margin:auto;padding:35px 20px}
-h1 {color:var(--navy);font-size:30px}
-.intro {color:#687386;line-height:1.6}
-.search {
-  display:flex;gap:10px;margin:25px 0;flex-wrap:wrap;
+
+.brand {
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
-input,select {
-  padding:15px;border:1px solid #d5d9e0;
-  border-radius:9px;font-size:16px;background:white;
+
+.tagline {
+  color: var(--gold);
+  margin-top: 5px;
+  font-size: 14px;
 }
-input {flex:1;min-width:200px}
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: 32px;
+}
+
+.hero p {
+  color: #657084;
+}
+
+.search-area {
+  display: flex;
+  gap: 10px;
+  max-width: 750px;
+  margin: 25px auto;
+}
+
+input, select {
+  padding: 14px;
+  border: 1px solid #d5d9e0;
+  border-radius: 7px;
+  font-size: 15px;
+  background: white;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+}
+
 button {
-  background:var(--navy);color:white;border:0;
-  border-radius:9px;padding:14px 22px;
-  cursor:pointer;font-weight:bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: bold;
 }
-button:hover {opacity:.9}
-.filters {display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
-.filters select {min-width:150px}
+
+.search-button {
+  background: var(--navy);
+  color: white;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.filters select {
+  min-width: 180px;
+}
+
 .notice {
-  background:#fff;border-left:4px solid var(--gold);
-  padding:13px;border-radius:6px;color:#596579;
-  font-size:13px;line-height:1.5;
+  background: #fff9e9;
+  border-left: 4px solid var(--gold);
+  padding: 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 25px 0;
 }
+
+#count {
+  font-weight: bold;
+  color: var(--navy);
+  margin: 20px 0;
+}
+
 .grid {
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:18px;margin-top:25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
 }
+
 .card {
-  background:white;border:1px solid #e4e6eb;
-  border-radius:13px;padding:18px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
 }
-.card h3 {color:var(--navy);margin:8px 0}
-.store {color:#788397;font-size:13px}
-.price {font-size:23px;font-weight:bold;margin:12px 0;color:#172b50}
-.spec {font-size:13px;color:#596579;line-height:1.5}
-.compare {margin-top:13px;background:#e9edf5;color:var(--navy)}
-#comparison {margin-top:30px;overflow-x:auto}
-table {width:100%;border-collapse:collapse;background:white}
-td,th {padding:12px;border:1px solid #ddd;text-align:left}
-th {background:var(--navy);color:white}
-footer {text-align:center;padding:25px;color:#778094;font-size:13px}
+
+.store {
+  color: #777;
+  font-size: 12px;
+}
+
+.card h3 {
+  color: var(--navy);
+  min-height: 42px;
+}
+
+.price {
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--navy);
+  margin: 15px 0;
+}
+
+.spec {
+  color: #687386;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.compare {
+  background: var(--gold);
+  color: var(--navy);
+  width: 100%;
+  margin-top: 12px;
+}
+
+section h2 {
+  color: var(--navy);
+  margin-top: 35px;
+}
+
+#comparison {
+  margin-top: 45px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #e3e5e9;
+  padding: 13px;
+  text-align: left;
+  min-width: 110px;
+}
+
+th {
+  background: var(--navy);
+  color: white;
+}
+
+.empty {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  color: #687386;
+}
+
+footer {
+  margin-top: 60px;
+  padding: 30px 15px;
+  text-align: center;
+  background: var(--navy);
+  color: white;
+  font-size: 13px;
+}
+
+footer a {
+  color: var(--gold);
+  margin: 0 8px;
+}
+
+@media(max-width: 600px) {
+  .search-area {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 25px;
+  }
+
+  header {
+    padding: 22px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="brand">Shop<span>Vellora</span></div>
-  <p>Shop Smarter. Live Better.</p>
+  <div class="brand">ShopVellora</div>
+  <div class="tagline">Shop Smarter. Live Better.</div>
 </header>
 
 <main>
-  <h1>Find & Compare Products</h1>
-  <p class="intro">
-    Search products, explore options and compare prices
-    to make smarter shopping decisions.
-  </p>
 
-  <div class="search">
-    <input id="search" type="search"
-      placeholder="Search mobiles, watches, perfumes, laptops...">
-    <button onclick="renderProducts()">Search</button>
+  <div class="hero">
+    <h1>Find & Compare Products</h1>
+    <p>Discover products and compare your shopping choices.</p>
+  </div>
+
+  <div class="search-area">
+    <input
+      id="search"
+      type="search"
+      placeholder="Search mobiles, watches, perfumes, laptops..."
+    >
+    <button class="search-button" onclick="renderProducts()">
+      Search
+    </button>
   </div>
 
   <div class="filters">
     <select id="category" onchange="renderProducts()">
       <option value="">All categories</option>
-      <option>Electronics</option>
-      <option>Fashion</option>
-      <option>Beauty</option>
-      <option>Home</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Beauty">Beauty</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Home">Home</option>
     </select>
 
     <select id="store" onchange="renderProducts()">
       <option value="">All stores</option>
-      <option>Amazon</option>
-      <option>Flipkart</option>
+      <option value="Amazon">Amazon</option>
+      <option value="Flipkart">Flipkart</option>
     </select>
   </div>
 
   <div class="notice">
-    Prototype preview: these are sample products, not live retailer
-    listings. Live prices, stock and affiliate links will require
-    approved retailer product feeds or APIs.
+    <strong>Prototype preview:</strong>
+    These are sample products, not live retailer listings.
+    Live prices, stock and affiliate links require approved
+    retailer product feeds or APIs.
   </div>
 
   <p id="count"></p>
+
   <section class="grid" id="products"></section>
 
   <section id="comparison">
     <h2>Product Comparison</h2>
-    <p id="compareMessage">Select products to compare (maximum 4).</p>
+    <p id="compareMessage">Select up to 4 products to compare.</p>
     <div id="table"></div>
   </section>
+
 </main>
 
 <footer>
-  ShopVellora · Shop Smarter. Live Better.
+  <strong>ShopVellora</strong> · Shop Smarter. Live Better.
+  <p>Independent shopping comparison prototype.</p>
+  <p>Affiliate disclosure: We may earn commissions from qualifying purchases.</p>
 </footer>
 
 <script>
+
 const products = [
- {id:1,name:"Redmi Smart Watch",category:"Electronics",store:"Amazon",price:1999,rating:"4.2",spec:"Smart watch · Fitness tracking"},
- {id:2,name:"Fastrack Smart Watch",category:"Electronics",store:"Flipkart",price:2499,rating:"4.1",spec:"Smart watch · Bluetooth calling"},
- {id:3,name:"Skinn Women Perfume",category:"Beauty",store:"Amazon",price:1299,rating:"4.3",spec:"Women's fragrance"},
- {id:4,name:"Lattafa Perfume",category:"Beauty",store:"Amazon",price:1899,rating:"4.4",spec:"Unisex fragrance"},
- {id:5,name:"Wireless Headphones",category:"Electronics",store:"Flipkart",price:1499,rating:"4.0",spec:"Bluetooth · Wireless"},
- {id:6,name:"Casual Backpack",category:"Fashion",store:"Amazon",price:999,rating:"4.1",spec:"Everyday backpack"}
+  {
+    id: 1,
+    name: "Redmi Smart Watch",
+    category: "Electronics",
+    store: "Amazon",
+    price: 1999,
+    rating: 4.2,
+    spec: "Smart watch with fitness tracking"
+  },
+  {
+    id: 2,
+    name: "Fastrack Smart Watch",
+    category: "Electronics",
+    store: "Flipkart",
+    price: 2499,
+    rating: 4.1,
+    spec: "Bluetooth smart watch"
+  },
+  {
+    id: 3,
+    name: "Skinn Women Perfume",
+    category: "Beauty",
+    store: "Amazon",
+    price: 1299,
+    rating: 4.3,
+    spec: "Women's fragrance"
+  },
+  {
+    id: 4,
+    name: "Lattafa Perfume",
+    category: "Beauty",
+    store: "Amazon",
+    price: 1899,
+    rating: 4.4,
+    spec: "Unisex fragrance"
+  },
+  {
+    id: 5,
+    name: "Wireless Headphones",
+    category: "Electronics",
+    store: "Flipkart",
+    price: 1499,
+    rating: 4.0,
+    spec: "Bluetooth headphones"
+  },
+  {
+    id: 6,
+    name: "Casual Backpack",
+    category: "Fashion",
+    store: "Amazon",
+    price: 999,
+    rating: 4.1,
+    spec: "Everyday backpack"
+  }
 ];
 
 let selected = [];
 
 function renderProducts() {
- const q=document.getElementById("search").value.toLowerCase().trim();
- const cat=document.getElementById("category").value;
- const store=document.getElementById("store").value;
 
- const results=products.filter(p=>
-  (!q || (p.name+" "+p.category+" "+p.spec).toLowerCase().includes(q)) &&
-  (!cat || p.category===cat) &&
-  (!store || p.store===store)
- );
+  const q = document.getElementById("search")
+    .value.toLowerCase().trim();
 
- document.getElementById("count").textContent=
-  results.length+" sample products found";
+  const cat = document.getElementById("category").value;
+  const store = document.getElementById("store").value;
 
- document.getElementById("products").innerHTML=results.map(p=>`
-  <article class="card">
-   <div class="store">${p.category} · ${p.store}</div>
-   <h3>${p.name}</h3>
-   <div class="price">₹${p.price.toLocaleString("en-IN")}</div>
-   <div class="spec">Rating: ${p.rating}/5</div>
-   <p class="spec">${p.spec}</p>
-   <button class="compare" onclick="toggleCompare(${p.id})">
-    ${selected.includes(p.id)?"Remove":"Add to compare"}
-   </button>
-  </article>
- `).join("") || "<p>No matching sample products. Try another search.</p>";
+  const results = products.filter(p =>
+    (!q || (
+      p.name + " " + p.category + " " + p.spec
+    ).toLowerCase().includes(q)) &&
+    (!cat || p.category === cat) &&
+    (!store || p.store === store)
+  );
+
+  document.getElementById("count").textContent =
+    results.length + " sample products found";
+
+  document.getElementById("products").innerHTML =
+    results.map(p => `
+      <article class="card">
+
+        <div class="store">
+          ${p.category} · ${p.store}
+        </div>
+
+        <h3>${p.name}</h3>
+
+        <div class="price">
+          ₹${p.price.toLocaleString("en-IN")}
+        </div>
+
+        <div class="spec">
+          Rating: ${p.rating}/5
+        </div>
+
+        <p class="spec">${p.spec}</p>
+
+        <button class="compare"
+          onclick="toggleCompare(${p.id})">
+          ${selected.includes(p.id)
+            ? "Remove from comparison"
+            : "Add to compare"}
+        </button>
+
+      </article>
+    `).join("") ||
+    '<p class="empty">No matching sample products. Try another search.</p>';
+
 }
 
 function toggleCompare(id) {
- if(selected.includes(id)) {
-  selected=selected.filter(x=>x!==id);
- } else if(selected.length<4) {
-  selected.push(id);
- } else {
-  alert("You can compare up to 4 products.");
- }
- renderProducts();
- renderComparison();
+
+  if (selected.includes(id)) {
+
+    selected = selected.filter(x => x !== id);
+
+  } else if (selected.length < 4) {
+
+    selected.push(id);
+
+  } else {
+
+    alert("You can compare up to 4 products.");
+    return;
+
+  }
+
+  renderProducts();
+  renderComparison();
+
 }
 
 function renderComparison() {
- const items=products.filter(p=>selected.includes(p.id));
- document.getElementById("compareMessage").textContent=
-  items.length+" of 4 products selected";
 
- document.getElementById("table").innerHTML=items.length?`
-  <table>
-   <tr><th>Detail</th>${items.map(p=><th>${p.name}</th>).join("")}</tr>
-   <tr><td>Store</td>${items.map(p=><td>${p.store}</td>).join("")}</tr>
-   <tr><td>Price</td>${items.map(p=><td>₹${p.price.toLocaleString("en-IN")}</td>).join("")}</tr>
-   <tr><td>Rating</td>${items.map(p=><td>${p.rating}/5</td>).join("")}</tr>
-   <tr><td>Specifications</td>${items.map(p=><td>${p.spec}</td>).join("")}</tr>
-  </table>`:"";
+  const items = products.filter(p =>
+    selected.includes(p.id)
+  );
+
+  document.getElementById("compareMessage").textContent =
+    items.length + " of 4 products selected";
+
+  if (items.length === 0) {
+
+    document.getElementById("table").innerHTML =
+      '<p class="empty">Add products above to compare them.</p>';
+
+    return;
+
+  }
+
+  document.getElementById("table").innerHTML = `
+    <table>
+      <tr>
+        <th>Detail</th>
+        ${items.map(p => <th>${p.name}</th>).join("")}
+      </tr>
+
+      <tr>
+        <td>Store</td>
+        ${items.map(p => <td>${p.store}</td>).join("")}
+      </tr>
+
+      <tr>
+        <td>Price</td>
+        ${items.map(p =>
+          <td>₹${p.price.toLocaleString("en-IN")}</td>
+        ).join("")}
+      </tr>
+
+      <tr>
+        <td>Rating</td>
+        ${items.map(p => <td>${p.rating}/5</td>).join("")}
+      </tr>
+
+      <tr>
+        <td>Specifications</td>
+        ${items.map(p => <td>${p.spec}</td>).join("")}
+      </tr>
+    </table>
+  `;
+
 }
 
-document.getElementById("search").addEventListener("keydown",e=>{
- if(e.key==="Enter")renderProducts();
-});
+document.getElementById("search")
+  .addEventListener("keydown", e => {
+    if (e.key === "Enter") renderProducts();
+  });
 
 renderProducts();
+renderComparison();
+
 </script>
+
 </body>
 </html>
