@@ -220,7 +220,14 @@ footer a {
     padding: 22px;
   }
 }
-</style>
+  .product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #F8F5EF;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}</style>
 </head>
 
 <body>
@@ -397,7 +404,11 @@ function renderProducts() {
 
   results.forEach(function(product) {
     var card = makeElement("article", "card");
-
+    var img = document.createElement("img");
+img.src = "https://placehold.co/400x300/F8F5EF/142B5A?text=ShopVellora";
+img.alt = product.name;
+img.className = "product-image";
+card.appendChild(img);
     card.appendChild(makeElement(
       "div", "store",
       product.category + " · " + product.store
