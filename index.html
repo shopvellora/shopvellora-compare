@@ -6,41 +6,31 @@
 <title>ShopVellora | Shop Smarter. Live Better.</title>
 
 <style>
-:root {
-  --navy: #142B5A;
-  --gold: #D6B878;
-  --ivory: #F8F5EF;
-  --white: #FFFFFF;
-  --text: #202938;
-}
-
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: var(--ivory);
-  color: var(--text);
+  background: #F8F5EF;
+  color: #263247;
 }
 
 header {
-  background: var(--navy);
+  background: #142B5A;
   color: white;
   padding: 25px 7%;
-  border-bottom: 4px solid var(--gold);
+  border-bottom: 4px solid #D6B878;
 }
 
 .brand {
-  font-size: 29px;
+  font-size: 30px;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
 .tagline {
-  color: var(--gold);
-  margin-top: 5px;
+  color: #D6B878;
+  margin-top: 6px;
   font-size: 14px;
 }
 
@@ -52,16 +42,15 @@ main {
 
 .hero {
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .hero h1 {
-  color: var(--navy);
+  color: #142B5A;
   font-size: 32px;
 }
 
 .hero p {
-  color: #657084;
+  color: #687386;
 }
 
 .search-area {
@@ -73,7 +62,7 @@ main {
 
 input, select {
   padding: 14px;
-  border: 1px solid #d5d9e0;
+  border: 1px solid #D5D9E0;
   border-radius: 7px;
   font-size: 15px;
   background: white;
@@ -89,12 +78,11 @@ button {
   border: none;
   border-radius: 7px;
   padding: 13px 20px;
-  font-size: 14px;
   font-weight: bold;
 }
 
 .search-button {
-  background: var(--navy);
+  background: #142B5A;
   color: white;
 }
 
@@ -111,8 +99,8 @@ button {
 }
 
 .notice {
-  background: #fff9e9;
-  border-left: 4px solid var(--gold);
+  background: #FFF9E9;
+  border-left: 4px solid #D6B878;
   padding: 14px;
   border-radius: 5px;
   font-size: 13px;
@@ -121,8 +109,8 @@ button {
 }
 
 #count {
+  color: #142B5A;
   font-weight: bold;
-  color: var(--navy);
   margin: 20px 0;
 }
 
@@ -136,8 +124,8 @@ button {
   background: white;
   border-radius: 12px;
   padding: 20px;
+  border: 1px solid #E8E8E8;
   box-shadow: 0 3px 15px rgba(0,0,0,0.06);
-  border: 1px solid #eee;
 }
 
 .store {
@@ -146,14 +134,14 @@ button {
 }
 
 .card h3 {
-  color: var(--navy);
-  min-height: 42px;
+  color: #142B5A;
+  min-height: 40px;
 }
 
 .price {
+  color: #142B5A;
   font-size: 23px;
   font-weight: bold;
-  color: var(--navy);
   margin: 15px 0;
 }
 
@@ -164,15 +152,15 @@ button {
 }
 
 .compare {
-  background: var(--gold);
-  color: var(--navy);
+  background: #D6B878;
+  color: #142B5A;
   width: 100%;
   margin-top: 12px;
 }
 
 section h2 {
-  color: var(--navy);
-  margin-top: 35px;
+  color: #142B5A;
+  margin-top: 40px;
 }
 
 #comparison {
@@ -188,20 +176,20 @@ table {
 }
 
 th, td {
-  border: 1px solid #e3e5e9;
+  border: 1px solid #E3E5E9;
   padding: 13px;
   text-align: left;
   min-width: 110px;
 }
 
 th {
-  background: var(--navy);
+  background: #142B5A;
   color: white;
 }
 
 .empty {
-  padding: 20px;
   background: white;
+  padding: 20px;
   border-radius: 8px;
   color: #687386;
 }
@@ -210,14 +198,13 @@ footer {
   margin-top: 60px;
   padding: 30px 15px;
   text-align: center;
-  background: var(--navy);
+  background: #142B5A;
   color: white;
   font-size: 13px;
 }
 
 footer a {
-  color: var(--gold);
-  margin: 0 8px;
+  color: #D6B878;
 }
 
 @media(max-width: 600px) {
@@ -246,23 +233,18 @@ footer a {
 <main>
 
   <div class="hero">
-    <h1>Find & Compare Products</h1>
+    <h1>Find &amp; Compare Products</h1>
     <p>Discover products and compare your shopping choices.</p>
   </div>
 
   <div class="search-area">
-    <input
-      id="search"
-      type="search"
-      placeholder="Search mobiles, watches, perfumes, laptops..."
-    >
-    <button class="search-button" onclick="renderProducts()">
-      Search
-    </button>
+    <input id="search" type="search"
+      placeholder="Search mobiles, watches, perfumes, laptops...">
+    <button class="search-button" id="searchButton">Search</button>
   </div>
 
   <div class="filters">
-    <select id="category" onchange="renderProducts()">
+    <select id="category">
       <option value="">All categories</option>
       <option value="Electronics">Electronics</option>
       <option value="Beauty">Beauty</option>
@@ -270,7 +252,7 @@ footer a {
       <option value="Home">Home</option>
     </select>
 
-    <select id="store" onchange="renderProducts()">
+    <select id="store">
       <option value="">All stores</option>
       <option value="Amazon">Amazon</option>
       <option value="Flipkart">Flipkart</option>
@@ -284,7 +266,7 @@ footer a {
     retailer product feeds or APIs.
   </div>
 
-  <p id="count"></p>
+  <p id="count">Loading products...</p>
 
   <section class="grid" id="products"></section>
 
@@ -297,14 +279,15 @@ footer a {
 </main>
 
 <footer>
-  <strong>ShopVellora</strong> · Shop Smarter. Live Better.
-  <p>Independent shopping comparison prototype.</p>
-  <p>Affiliate disclosure: We may earn commissions from qualifying purchases.</p>
+  <strong>ShopVellora</strong>
+  <p>Shop Smarter. Live Better.</p>
+  <p>We may earn commissions from qualifying purchases.</p>
 </footer>
 
 <script>
+"use strict";
 
-const products = [
+var products = [
   {
     id: 1,
     name: "Redmi Smart Watch",
@@ -361,115 +344,190 @@ const products = [
   }
 ];
 
-let selected = [];
+var selected = [];
+
+function makeElement(tag, className, content) {
+  var element = document.createElement(tag);
+
+  if (className) {
+    element.className = className;
+  }
+
+  if (content !== undefined) {
+    element.textContent = content;
+  }
+
+  return element;
+}
 
 function renderProducts() {
+  var query = document.getElementById("search").value
+    .toLowerCase().trim();
 
-  const q = document.getElementById("search")
-    .value.toLowerCase().trim();
+  var category = document.getElementById("category").value;
+  var store = document.getElementById("store").value;
 
-  const cat = document.getElementById("category").value;
-  const store = document.getElementById("store").value;
+  var results = products.filter(function(product) {
+    var searchable = (
+      product.name + " " +
+      product.category + " " +
+      product.spec
+    ).toLowerCase();
 
-  const results = products.filter(p =>
-    (!q || (
-      p.name + " " + p.category + " " + p.spec
-    ).toLowerCase().includes(q)) &&
-    (!cat || p.category === cat) &&
-    (!store || p.store === store)
-  );
+    return (
+      (!query || searchable.indexOf(query) !== -1) &&
+      (!category || product.category === category) &&
+      (!store || product.store === store)
+    );
+  });
 
   document.getElementById("count").textContent =
     results.length + " sample products found";
 
-  document.getElementById("products").innerHTML =
-    results.map(p => `
-      <article class="card">
+  var container = document.getElementById("products");
+  container.replaceChildren();
 
-        <div class="store">
-          ${p.category} · ${p.store}
-        </div>
+  if (results.length === 0) {
+    container.appendChild(
+      makeElement("p", "empty",
+        "No matching sample products. Try another search.")
+    );
+    return;
+  }
 
-        <h3>${p.name}</h3>
+  results.forEach(function(product) {
+    var card = makeElement("article", "card");
 
-        <div class="price">
-          ₹${p.price.toLocaleString("en-IN")}
-        </div>
+    card.appendChild(makeElement(
+      "div", "store",
+      product.category + " · " + product.store
+    ));
 
-        <div class="spec">
-          Rating: ${p.rating}/5
-        </div>
+    card.appendChild(makeElement("h3", "", product.name));
 
-        <p class="spec">${p.spec}</p>
+    card.appendChild(makeElement(
+      "div", "price",
+      "₹" + product.price.toLocaleString("en-IN")
+    ));
 
-        <button class="compare"
-          onclick="toggleCompare(${p.id})">
-          ${selected.includes(p.id)
-            ? "Remove from comparison"
-            : "Add to compare"}
-        </button>
+    card.appendChild(makeElement(
+      "div", "spec",
+      "Rating: " + product.rating + "/5"
+    ));
 
-      </article>
-    `).join("") ||
-    '<p class="empty">No matching sample products. Try another search.</p>';
+    card.appendChild(makeElement(
+      "p", "spec", product.spec
+    ));
 
+    var button = makeElement(
+      "button", "compare",
+      selected.indexOf(product.id) !== -1
+        ? "Remove from comparison"
+        : "Add to compare"
+    );
+
+    button.addEventListener("click", function() {
+      toggleCompare(product.id);
+    });
+
+    card.appendChild(button);
+    container.appendChild(card);
+  });
 }
 
 function toggleCompare(id) {
-
-  if (selected.includes(id)) {
-
-    selected = selected.filter(x => x !== id);
-
+  if (selected.indexOf(id) !== -1) {
+    selected = selected.filter(function(item) {
+      return item !== id;
+    });
   } else if (selected.length < 4) {
-
     selected.push(id);
-
   } else {
-
     alert("You can compare up to 4 products.");
     return;
-
   }
 
   renderProducts();
   renderComparison();
-
 }
 
 function renderComparison() {
-  const items = products.filter(p => selected.includes(p.id));
-  document.getElementById("compareMessage").textContent = items.length + " of 4 products selected";
+  var items = products.filter(function(product) {
+    return selected.indexOf(product.id) !== -1;
+  });
+
+  document.getElementById("compareMessage").textContent =
+    items.length + " of 4 products selected";
+
+  var tableContainer = document.getElementById("table");
+  tableContainer.replaceChildren();
+
   if (items.length === 0) {
-    document.getElementById("table").innerHTML = '<p class="empty">Add products above to compare them.</p>';
+    tableContainer.appendChild(makeElement(
+      "p", "empty", "Add products above to compare them."
+    ));
     return;
   }
-  document.getElementById("table").innerHTML = `
-    <table>
-      <tr><th>Detail</th>${items.map(p => <th>${p.name}</th>).join("")}</tr>
-      <tr><td>Store</td>${items.map(p => <td>${p.store}</td>).join("")}</tr>
-      <tr><td>Price</td>${items.map(p => <td>₹${p.price.toLocaleString("en-IN")}</td>).join("")}</tr>
-      <tr><td>Rating</td>${items.map(p => <td>${p.rating}/5</td>).join("")}</tr>
-      <tr><td>Specifications</td>${items.map(p => <td>${p.spec}</td>).join("")}</tr>
-    </table>
-  `;
-}
-      <tr>
-        <td>Rating</td>
-        ${items.map(p => <td>${p.rating}/5</td>).join("")}
-      </tr>
 
-      <tr>
-        <td>Specifications</td>
-        ${items.map(p => <td>${p.spec}</td>).join("")}
-      </tr>
-    </table>
-  `;
-}
-document.getElementById("search")
-  .addEventListener("keydown", e => {
-    if (e.key === "Enter") renderProducts();
+  var table = document.createElement("table");
+
+  var rows = [
+    {
+      label: "Product",
+      value: function(p) { return p.name; }
+    },
+    {
+      label: "Store",
+      value: function(p) { return p.store; }
+    },
+    {
+      label: "Price",
+      value: function(p) {
+        return "₹" + p.price.toLocaleString("en-IN");
+      }
+    },
+    {
+      label: "Rating",
+      value: function(p) { return p.rating + "/5"; }
+    },
+    {
+      label: "Specifications",
+      value: function(p) { return p.spec; }
+    }
+  ];
+
+  rows.forEach(function(row) {
+    var tr = document.createElement("tr");
+
+    tr.appendChild(makeElement("th", "", row.label));
+
+    items.forEach(function(product) {
+      tr.appendChild(makeElement(
+        "td", "", row.value(product)
+      ));
+    });
+
+    table.appendChild(tr);
   });
+
+  tableContainer.appendChild(table);
+}
+
+document.getElementById("searchButton")
+  .addEventListener("click", renderProducts);
+
+document.getElementById("search")
+  .addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      renderProducts();
+    }
+  });
+
+document.getElementById("category")
+  .addEventListener("change", renderProducts);
+
+document.getElementById("store")
+  .addEventListener("change", renderProducts);
 
 renderProducts();
 renderComparison();
