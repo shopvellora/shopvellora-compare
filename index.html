@@ -438,37 +438,22 @@ function toggleCompare(id) {
 }
 
 function renderComparison() {
-
-  const items = products.filter(p =>
-    selected.includes(p.id)
-  );
-
-  document.getElementById("compareMessage").textContent =
-    items.length + " of 4 products selected";
-
+  const items = products.filter(p => selected.includes(p.id));
+  document.getElementById("compareMessage").textContent = items.length + " of 4 products selected";
   if (items.length === 0) {
-    document.getElementById("table").innerHTML =
-      '<p class="empty">Add products above to compare them.</p>';
+    document.getElementById("table").innerHTML = '<p class="empty">Add products above to compare them.</p>';
     return;
   }
-
   document.getElementById("table").innerHTML = `
     <table>
-      <tr>
-        <th>Detail</th>
-        ${items.map(p => <th>${p.name}</th>).join("")}
-      </tr>
-
-      <tr>
-        <td>Store</td>
-        ${items.map(p => <td>${p.store}</td>).join("")}
-      </tr>
-
-      <tr>
-        <td>Price</td>
-        ${items.map(p => <td>₹${p.price.toLocaleString("en-IN")}</td>).join("")}
-      </tr>
-
+      <tr><th>Detail</th>${items.map(p => <th>${p.name}</th>).join("")}</tr>
+      <tr><td>Store</td>${items.map(p => <td>${p.store}</td>).join("")}</tr>
+      <tr><td>Price</td>${items.map(p => <td>₹${p.price.toLocaleString("en-IN")}</td>).join("")}</tr>
+      <tr><td>Rating</td>${items.map(p => <td>${p.rating}/5</td>).join("")}</tr>
+      <tr><td>Specifications</td>${items.map(p => <td>${p.spec}</td>).join("")}</tr>
+    </table>
+  `;
+}
       <tr>
         <td>Rating</td>
         ${items.map(p => <td>${p.rating}/5</td>).join("")}
